@@ -59,7 +59,7 @@ function App() {
       placeholder: "Password",
       errorMessage: "Put the Password",
       label: "Password",
-      pattern: "^(?=.*[A-Za-z])(?=.*d)(?=.*[@$!%*#?&])[A-Za-zd@$!%*#?&]{8,}$",
+      // pattern: "^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$",
       required: true,
     },
     {
@@ -119,7 +119,7 @@ function App() {
   console.log(values);
   return (
     <div className="app">
-      <form onSubmit={handleSubmit}>
+      <form>
         <h1>Register</h1>
         {inputs.map((input) => (
           <FormInput
@@ -130,7 +130,9 @@ function App() {
           />
         ))}
 
-        <button>Submit</button>
+        <button type="submit" onSubmit={handleSubmit}>
+          Submit
+        </button>
       </form>
     </div>
   );
